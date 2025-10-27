@@ -18,18 +18,18 @@ public class VisitorEntity {
     private Long id;
 
     @Column(nullable = false, unique = true)
-    private String deviceId; // unik per pengunjung (cookie / BLE tracker / cam ID)
+    private String deviceId;
 
-    private LocalDateTime entryTime; // waktu pertama kali masuk mall
-    private LocalDateTime exitTime;  // waktu keluar mall
+    private LocalDateTime entryTime;
+    private LocalDateTime exitTime;
 
     @OneToMany(mappedBy = "visitor", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<VisitEntity> visits;
 
     @ManyToOne
     @JoinColumn(name = "current_outlet_id")
-    private OutletEntity currentOutlet; // outlet yang sedang dikunjungi
+    private OutletEntity currentOutlet;
 
     @Column(nullable = false)
-    private boolean hasPaid = false; // status apakah sudah membayar atau belum
+    private boolean hasPaid = false;
 }

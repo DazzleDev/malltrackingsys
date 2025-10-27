@@ -25,12 +25,12 @@ public class VisitEntity {
     private OutletEntity outlet;
 
     @Column(nullable = false)
-    private LocalDateTime visitTime; // kapan masuk outlet
+    private LocalDateTime visitTime;
 
-    private LocalDateTime exitTime;  // kapan keluar outlet
+    private LocalDateTime exitTime;
 
     @Column(nullable = false)
-    private boolean hasPaid = false; // status selesai/pembayaran
+    private boolean hasPaid = false;
 
     public long getDurationMinutes() {
         if (exitTime != null && visitTime != null) {
